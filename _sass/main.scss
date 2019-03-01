@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Arbuz-Regular';
+    src: url(../fonts/38DF58_0_0.eot);
+    src: url(../fonts/38DF58_0_0.eot?#iefix) format("embedded-opentype"),url(../fonts/38DF58_0_0.woff2) format("woff2"),url(../fonts/38DF58_0_0.woff) format("woff"),url(../fonts/38DF58_0_0.ttf) format("truetype")
+}
+body {
+  background-color: #F9F9F9;
+  color: #525252;
+}
+a {
+  color: #794956;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.main-content {
+  h1 {
+    color: #525252;
+  }
+}
+.page-header {
+  background: url(../images/nail.png) 0 -6rem;
+  padding: 0 0 2rem 0;
+}
+header {
+  padding: 2rem;
+  background-color: #22060e;
+  opacity: 0.9;
+  a, nav {
+    line-height: .5rem;
+    color: #F9F9F9;
+  }
+}
+.logo {
+  font-size: 2rem;
+  float: left;
+}
+.arbuz {
+  font-family: 'Arbuz-Regular';
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  float: right;
+  a {
+    color: #f9f9f9;
+    margin: 1rem;
+  }
+  .current {
+    color: #ff1313;
+  }
+}
+.lead {
+  max-width: 64rem;
+  padding: 2rem 6rem;
+  margin: 0 auto;
+}
