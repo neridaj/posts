@@ -1,0 +1,11 @@
+---
+layout: portfolio
+title: Portfolio
+---
+<h1>Portfolio</h1>
+
+{% for portfolio in site.portfolio %}
+  <div class="screenshot">
+    {{ portfolio.content }}
+  </div>
+{% endfor %}
