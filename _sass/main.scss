@@ -10,7 +10,7 @@ body {
 a {
   color: #794956;
   &:hover {
-    text-decoration: none;
+    color: #ff1313;
   }
 }
 .main-content {
@@ -26,7 +26,8 @@ a {
   }
 }
 .page-header {
-  background: url(../images/nail.png) 0 -6rem;
+  background: url(../images/nail.png) no-repeat 0 -6rem;
+  background-size: cover;
   padding: 0 0 2rem 0;
 }
 header {
@@ -52,6 +53,7 @@ nav {
   a {
     color: #f9f9f9;
     margin: 1rem;
+    font-weight: 900;
   }
   .current {
     color: #ff1313;
@@ -145,5 +147,33 @@ nav {
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
+  }
+}
+.main-content.posts, .sidebar {
+  padding: 2rem;
+  margin: 0;
+  float: left;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+.main-content.posts {
+  max-width: 50rem;
+}
+.sidebar {
+  max-width: 20rem;
+}
+.sidebar {
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: normal;
+  }
+  h3 {
+    margin-bottom: .25rem;
+  }
+  ul {
+    margin-top: 0;
   }
 }

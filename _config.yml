@@ -27,10 +27,12 @@ repository: neridaj/neridaj.github.io
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
-highlighter: rouge
 collections:
   - portfolio
 permalink: /:categories/:year/:month/:day/:title:output_ext
