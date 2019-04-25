@@ -6,12 +6,18 @@
 body {
   background-color: #F9F9F9;
   color: #525252;
+  margin: 0;
 }
 a {
   color: #794956;
   &:hover {
     color: #ff1313;
   }
+}
+/* Column container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 .main-content {
   h1 {
@@ -22,6 +28,13 @@ a {
     float: left;
     p {
       margin-bottom: 0;
+    }
+  }
+  .highlight {
+    margin: 1em 0;
+    pre {
+      background-color: #FFF;
+      border-color: #22060e40;
     }
   }
 }
@@ -38,6 +51,9 @@ header {
     line-height: .5rem;
     color: #F9F9F9;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 .logo {
   font-size: 2rem;
@@ -53,7 +69,7 @@ nav {
   a {
     color: #f9f9f9;
     margin: 1rem;
-    font-weight: 900;
+    font-weight: 700;
   }
   .current {
     color: #ff1313;
@@ -159,10 +175,10 @@ nav {
   }
 }
 .main-content.posts {
-  max-width: 50rem;
+  flex: 70%;
 }
 .sidebar {
-  max-width: 20rem;
+  flex: 30%;
 }
 .sidebar {
   h1 {
@@ -176,4 +192,22 @@ nav {
   ul {
     margin-top: 0;
   }
+}
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-right: 1em;
 }
