@@ -1,3 +1,4 @@
+/********** Global **********/
 @font-face {
     font-family: 'Arbuz-Regular';
     src: url(../fonts/38DF58_0_0.eot);
@@ -14,12 +15,76 @@ a {
     color: #ff1313;
   }
 }
-/* Column container */
+a:hover {
+  text-decoration: none;
+}
+.arbuz {
+  font-family: 'Arbuz-Regular';
+  font-weight: normal;
+  font-style: normal;
+}
 .container {
   display: flex;
   flex-wrap: wrap;
 }
-.main-content {
+/********** Header **********/
+header {
+  color: #F9F9F9;
+  .header-bg {
+    background: url(../images/nail.png) no-repeat 0 -6rem;
+    background-size: cover;
+    padding: 0 0 2rem 0;
+    .blurb {
+      max-width: 64rem;
+      padding: 2rem 6rem;
+      margin: 0 auto;
+    }
+  }
+  .nav-container {
+    padding: 2rem;
+    background-color: #22060e;
+    opacity: 0.9;
+    .logo {
+      font-size: 2rem;
+      float: left;
+    }
+    a {
+      color:  #794956;
+      &:hover {
+        color: #F9F9F9;
+      }
+    }
+    a, nav {
+      line-height: .5rem;
+    }
+    nav {
+      float: right;
+      a {
+        margin: 1rem;
+        font-weight: 700;
+      }
+      .current {
+        color: #F9F9F9;
+      }
+    }
+  }
+}
+/********** Footer **********/
+footer {
+  padding: 2rem
+}
+/********** Posts **********/
+.posts, .sidebar {
+  padding: 2rem;
+  margin: 0;
+  float: left;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+.posts {
+  flex: 70%;
   h1 {
     color: #525252;
   }
@@ -38,48 +103,41 @@ a {
     }
   }
 }
-.page-header {
-  background: url(../images/nail.png) no-repeat 0 -6rem;
-  background-size: cover;
-  padding: 0 0 2rem 0;
+.sidebar {
+  flex: 30%;
 }
-header {
-  padding: 2rem;
-  background-color: #22060e;
-  opacity: 0.9;
-  a, nav {
-    line-height: .5rem;
-    color: #F9F9F9;
+.sidebar {
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
-  a:hover {
+  h3 {
+    margin-bottom: .25rem;
+  }
+  ul {
+    margin-top: 0;
+  }
+}
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+}
+/********** Pagination **********/
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
     text-decoration: none;
-  }
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-right: 1em;
 }
-.logo {
-  font-size: 2rem;
-  float: left;
-}
-.arbuz {
-  font-family: 'Arbuz-Regular';
-  font-weight: normal;
-  font-style: normal;
-}
-nav {
-  float: right;
-  a {
-    color: #f9f9f9;
-    margin: 1rem;
-    font-weight: 700;
-  }
-  .current {
-    color: #ff1313;
-  }
-}
-.lead {
-  max-width: 64rem;
-  padding: 2rem 6rem;
-  margin: 0 auto;
-}
+
 
 
 
@@ -164,50 +222,4 @@ nav {
   .modal-content {
     width: 100%;
   }
-}
-.main-content.posts, .sidebar {
-  padding: 2rem;
-  margin: 0;
-  float: left;
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-}
-.main-content.posts {
-  flex: 70%;
-}
-.sidebar {
-  flex: 30%;
-}
-.sidebar {
-  h1 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: normal;
-  }
-  h3 {
-    margin-bottom: .25rem;
-  }
-  ul {
-    margin-top: 0;
-  }
-}
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .container {
-    flex-direction: column;
-  }
-}
-.pagination>li>a, .pagination>li>span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: .25rem;
-    margin-right: 1em;
 }
