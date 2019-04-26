@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Jason Nerida - Blog
-email: your-email@example.com
+email: hello@jasonnerida.com
 description: >- # this means to ignore newlines until "baseurl:"
   “I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.”
   ― Frank Herbert, Dune
@@ -106,3 +106,12 @@ pagination:
   indexpage: 'blog'
 
 ############################################################
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: true
+  startings: [html, head, body]

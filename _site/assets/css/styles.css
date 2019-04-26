@@ -1,6 +1,8 @@
 /********** Global **********/
 @font-face { font-family: 'Arbuz-Regular'; src: url(../fonts/38DF58_0_0.eot); src: url(../fonts/38DF58_0_0.eot?#iefix) format("embedded-opentype"), url(../fonts/38DF58_0_0.woff2) format("woff2"), url(../fonts/38DF58_0_0.woff) format("woff"), url(../fonts/38DF58_0_0.ttf) format("truetype"); }
-body { background-color: #F9F9F9; color: #525252; margin: 0; }
+body { background-color: #F9F9F9; color: #525252; margin: 0; display: flex; flex-flow: column; min-height: 100vh; }
+
+main { flex: 1; }
 
 a { color: #794956; }
 a:hover { color: #ff1313; }
@@ -26,6 +28,7 @@ header .nav-container nav .current { color: #F9F9F9; }
 
 /********** Footer **********/
 footer { padding: 2rem; }
+footer .quotes { display: block; }
 
 /********** Posts **********/
 .posts, .sidebar { padding: 2rem; margin: 0; float: left; }

@@ -8,7 +8,11 @@ body {
   background-color: #F9F9F9;
   color: #525252;
   margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
+main { flex: 1; }
 a {
   color: #794956;
   &:hover {
@@ -71,7 +75,10 @@ header {
 }
 /********** Footer **********/
 footer {
-  padding: 2rem
+  padding: 2rem;
+  .quotes {
+    display: block;
+  }
 }
 /********** Posts **********/
 .posts, .sidebar {
