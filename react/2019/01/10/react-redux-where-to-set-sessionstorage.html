@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>React/Redux where to set sessionStorage | Jason Nerida - Blog</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="React/Redux where to set sessionStorage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If using react with redux to manage state, where should sessionStorage items be set? There doesn’t appear to be any hard-and-fast rules regarding this but if sessionStorage is just treated as another store then the reducer is probably a good option." />
+<meta property="og:description" content="If using react with redux to manage state, where should sessionStorage items be set? There doesn’t appear to be any hard-and-fast rules regarding this but if sessionStorage is just treated as another store then the reducer is probably a good option." />
+<link rel="canonical" href="https://neridaj.github.io/react/2019/01/10/react-redux-where-to-set-sessionstorage.html" />
+<meta property="og:url" content="https://neridaj.github.io/react/2019/01/10/react-redux-where-to-set-sessionstorage.html" />
+<meta property="og:site_name" content="Jason Nerida - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-10T01:10:05+00:00" />
+<script type="application/ld+json">
+{"dateModified":"2019-01-10T01:10:05+00:00","datePublished":"2019-01-10T01:10:05+00:00","description":"If using react with redux to manage state, where should sessionStorage items be set? There doesn’t appear to be any hard-and-fast rules regarding this but if sessionStorage is just treated as another store then the reducer is probably a good option.","mainEntityOfPage":{"@type":"WebPage","@id":"https://neridaj.github.io/react/2019/01/10/react-redux-where-to-set-sessionstorage.html"},"@type":"BlogPosting","url":"https://neridaj.github.io/react/2019/01/10/react-redux-where-to-set-sessionstorage.html","headline":"React/Redux where to set sessionStorage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=929acaa0335ed7bc0da43678295bd23889261acc">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <body>
+
+    
+<header>
+  <div class="">
+    <div class="nav-container">
+      <a href="/" class="logo arbuz">JASON NERIDA</a>
+      <nav>
+        
+          <a href="/" >HOME</a>
+        
+          <a href="/blog" >BLOG</a>
+        
+      </nav>
+    </div>
+    
+  </div>
+  <!-- <nav>
+    
+      
+        <a href="/404.html"></a>
+      
+    
+      
+        <a href="/"></a>
+      
+    
+      
+        <a href="/portfolio.html">Portfolio</a>
+      
+    
+      
+        <a href="/assets/css/styles.css"></a>
+      
+    
+      
+        <a href="/assets/css/style.css"></a>
+      
+    
+      
+        <a href="/feed.xml"></a>
+      
+    
+      
+        <a href="/blog.html">Blog</a>
+      
+    
+      
+        <a href="/page/2/blog.html">Blog - page 2</a>
+      
+    
+      
+        <a href="/page/3/blog.html">Blog - page 3</a>
+      
+    
+  </nav> -->
+</header>
+
+
+    <main class="main-content"class="container">
+
+      <p>If using react with redux to manage state, where should sessionStorage items be set? There doesn’t appear to be any hard-and-fast rules regarding this but if sessionStorage is just treated as another store then the reducer is probably a good option.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// actions/loginActions.js</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">loginUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">LoginApi</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">user</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">creds</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginUserSuccess</span><span class="p">(</span><span class="nx">creds</span><span class="p">));</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">loginUserSuccess</span><span class="p">(</span><span class="nx">creds</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">types</span><span class="p">.</span><span class="nx">LOGIN_USER_SUCCESS</span><span class="p">,</span>
+    <span class="na">state</span><span class="p">:</span> <span class="nx">creds</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// reducers/loginReducer.js</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">loginReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nb">Map</span><span class="p">(),</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nx">types</span><span class="p">.</span><span class="na">LOGIN_USER_SUCCESS</span><span class="p">:</span>
+      <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'credentials'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">state</span><span class="p">))</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'credentials'</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+
+
+    </main>
+
+    <footer>
+  
+    <span class="site-footer-owner">
+      <a class="icon" href="https://www.linkedin.com/in/jasonnerida" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </span>
+  
+  <!-- <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span> -->
+  <!-- <span class="quotes" style="z-index:50;font-size:0.9em;"><img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/><a href="https://theysaidso.com" title="Powered by quotes from theysaidso.com" style="color: #9fcc25; margin-left: 4px; vertical-align: middle;">theysaidso.com</a></span> -->
+
+</footer>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+  $(function() {
+    $.get("http://quotes.rest/qod.json?category=funny", function(data, status){
+      $('.project-tagline').append(data.contents.quotes[0].quote);
+    });
+  });
+</script> -->
+
+
+  </body>
+</html>
