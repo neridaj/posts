@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "React/Redux where to set sessionStorage"
 date:   2019-01-10 01:10:05Z
 categories: react

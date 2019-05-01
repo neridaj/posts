@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "react-router-dom route component requires page reload"
 date:   2018-03-21 023:08:45Z
 categories: react

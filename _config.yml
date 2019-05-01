@@ -19,8 +19,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   “I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.”
   ― Frank Herbert, Dune
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+url: "https://neridaj.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+linkedin_username: jasonnerida
 github_username:  neridaj
 repository: neridaj/neridaj.github.io
 
@@ -119,3 +119,10 @@ compress_html:
 sass:
     sass_dir: _sass
     style: :compressed
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: "posts"   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts

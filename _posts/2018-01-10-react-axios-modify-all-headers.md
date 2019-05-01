@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "React config default request headers"
 date:   2019-01-10 20:11:12Z
 categories: react

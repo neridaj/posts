@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Grouping by multiple properties using lodash"
 date:   2019-01-10 19:10:30Z
 categories: lodash

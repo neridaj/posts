@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Angular 1.x accessing form and model within directive"
 date:   2017-07-19 23:57:44Z
 categories: angular
