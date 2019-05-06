@@ -16,8 +16,8 @@
 title: Jason Nerida - Blog
 email: hello@jasonnerida.com
 description: >- # this means to ignore newlines until "baseurl:"
-  “I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.”
-  ― Frank Herbert, Dune
+  “If you always put limit on everything you do, physical or anything else. It will spread into your work and into your life. There are no limits. There are only plateaus, and you must not stay there, you must go beyond them.”
+  ― Bruce Lee
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://neridaj.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: jasonnerida
@@ -34,7 +34,7 @@ plugins:
   - jekyll-feed
 collections:
   - portfolio
-permalink: /:categories/:year/:month/:day/:title:output_ext
+permalink: /:categories/:year/:month/:day/:title/
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -61,7 +61,7 @@ pagination:
   collection: 'posts'
 
   # How many objects per paginated page, used to be `paginate` (default: 0, means all)
-  per_page: 2
+  per_page: 10
 
   # The permalink structure for the paginated pages (this can be any level deep)
   permalink: '/page/:num/' # Pages are index.html inside this folder (default)
@@ -103,7 +103,7 @@ pagination:
 
   # Optional, the default name of the index file for generated pages (e.g. 'index.html')
   # Without file extension
-  indexpage: 'blog'
+  indexpage: 'index'
 
 ############################################################
 compress_html:

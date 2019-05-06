@@ -1,15 +1,16 @@
-{% assign current = page.url | downcase | split: '.' %}
+{% assign arr = page.url | downcase | split: '/' %}
+{% assign base = arr[1] | prepend: '/' %}
 <header>
-  <div class="{% if current[0] == '/' %}header-bg{% endif %}">
+  <div class="{% if arr[1] == nil %}header-bg{% endif %}">
     <div class="nav-container">
       <a href="/" class="logo arbuz">JASON NERIDA</a>
       <nav>
         {% for item in site.data.navigation %}
-          <a href="{{ item.link }}" {% if current[0] == item.link %}class="current"{% endif %}>{{ item.name | upcase }}</a>
+          <a href="{{ item.link }}" {% if base == item.link  %}class="current"{% endif %}>{{ item.name | upcase }}</a>
         {% endfor %}
       </nav>
     </div>
-    {% if current[0] == '/' %}{% include blurb.html %}{% endif %}
+    {% if arr[1] == nil %}{% include blurb.html %}{% endif %}
   </div>
   <!-- <nav>
     {% for node in site.pages %}
