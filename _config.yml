@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   “If you always put limit on everything you do, physical or anything else. It will spread into your work and into your life. There are no limits. There are only plateaus, and you must not stay there, you must go beyond them.”
   ― Bruce Lee
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://neridaj.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://jasonnerida.com" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: jasonnerida
 github_username:  neridaj
 repository: neridaj/neridaj.github.io
@@ -32,6 +32,9 @@ kramdown:
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
 collections:
   - portfolio
 permalink: /:categories/:year/:month/:day/:title/
