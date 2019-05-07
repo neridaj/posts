@@ -20,10 +20,9 @@ gem "jekyll-theme-cayman"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
-  gem 'jekyll-sitemap'
-  gem 'jekyll-seo-tag'
-  gem 'jekyll-paginate-v2'
-  gem 'html-proofer'
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+  gem "html-proofer"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
