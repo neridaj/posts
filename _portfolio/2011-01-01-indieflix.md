@@ -1,5 +1,7 @@
 ---
 layout: default
 title: "Indieflix"
+description: "Website for Independent Film Streaming Company"
+tools: "Django, HTML, CSS, JavaScript"
 ---
-[![Indieflix](/assets/portfolio/indieflix.png)](/assets/portfolio/indieflix.png)
+![Indieflix](/assets/portfolio/indieflix.png)

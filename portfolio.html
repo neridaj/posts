@@ -2,10 +2,15 @@
 layout: default
 title: Portfolio
 ---
+<div class="content">
 <h1>Portfolio</h1>
-
-{% for portfolio in site.portfolio %}
-  <div class="screenshot">
-    {{ portfolio.content }}
+{% for project in site.portfolio %}
+  <div class="project">
+    {{ project.content }}
+    <div class="description">
+      <p>{{ project.description }}</p>
+      <i class="tools">{{ project.tools }}</i>
+    </div>
   </div>
 {% endfor %}
+</div>

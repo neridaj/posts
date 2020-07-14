@@ -23,6 +23,7 @@ url: "https://jasonnerida.com" # the base hostname & protocol for your site, e.g
 linkedin_username: jasonnerida
 github_username:  neridaj
 repository: neridaj/neridaj.github.io
+github: [metadata]
 
 # Build settings
 markdown: kramdown
